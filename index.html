@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Page - Noctyss</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="shortcut icon" href="https://imgs.search.brave.com/ZALQGMVj62CrdWSuP1VhGkTeh5Y5jFbp83GL2AuF5PM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bG9nb2FpLmNvbS9v/c3MvaWNvbnMvMjAy/MS8xMi8wMi8wdUpS/eGZWcGFOZkNvWngu/cG5n" type="image/x-icon">
+</head>
+
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo">
+        <a href="#"><img src="https://imgs.search.brave.com/ZALQGMVj62CrdWSuP1VhGkTeh5Y5jFbp83GL2AuF5PM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bG9nb2FpLmNvbS9v/c3MvaWNvbnMvMjAy/MS8xMi8wMi8wdUpS/eGZWcGFOZkNvWngu/cG5n"
+            alt="Logo"></a>
+      </div>
+      <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#"><i class="fas fa-plug"></i> Plugins</a></li>
+        <li><a href="#"><i class="fab fa-discord"></i> Discord</a></li>
+        <li><a href="#"><i class="fas fa-star"></i> Compre seu Vip</a></li>
+        <li><a href="#"><i class="fas fa-circle-question"></i> Ajuda</a></li>
+
+      </ul>
+
+    </nav>
+  </header>
+
+  <main class="hero">
+      <button class="toggle-theme" id="toggleTheme" aria-label="Alternar tema">
+            <i class="fas fa-moon"></i>
+          </button>
+    <div class="announcement">
+      💖 Ajude o servidor a se manter! <a href="#">Veja aqui &rarr;</a>
+    </div>
+    <h1>Noctyss Server</h1>
+    <p>✨ Mais um lugar para fazer amigos, conversar, jogar e se divertir! Aqui você encontrará um ambiente acolhedor e
+      atividades para todos os gostos.</p>
+    <div class="hero-buttons">
+      <a href="#" class="btn primary"><i class="fab fa-discord"></i> Entrar no Discord</a>
+      <a href="#" class="btn"><i class="fas fa-book"></i> Guias &rarr;</a>
+    </div>
+    <section class="info-section">
+      <div class="info-box">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Segurança</h3>
+        <p>Nosso servidor conta com moderação ativa e ferramentas para manter um ambiente seguro para todos.</p>
+      </div>
+      <div class="info-box">
+        <i class="fas fa-users"></i>
+        <h3>Comunidade</h3>
+        <p>Participe de eventos, torneios e canais de bate-papo ativos com membros engajados e acolhedores.</p>
+      </div>
+      <div class="info-box">
+        <i class="fas fa-gift"></i>
+        <h3>Recompensas</h3>
+        <p>Ganhe benefícios no servidor com sistemas de ranking, vip e conquistas exclusivas.</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const toggleBtn = document.getElementById("toggleTheme");
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark");
+      toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+    } else {
+      document.body.classList.remove("dark");
+      toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      const isDark = document.body.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+      toggleBtn.innerHTML = isDark
+        ? '<i class="fas fa-sun"></i>'
+        : '<i class="fas fa-moon"></i>';
+    });
+    document.getElementById("menuToggle").addEventListener("click", () => {
+      document.getElementById("navLinks").classList.toggle("active");
+    });
+  </script>
+
+</body>
+
+</html>
