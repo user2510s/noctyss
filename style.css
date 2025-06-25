@@ -193,6 +193,7 @@ body {
 
   .nav-links {
     display: none;
+    width: 380px;
     flex-direction: column;
     gap: 1rem;
     background-color: white;
@@ -255,6 +256,9 @@ body.dark .btn:not(.primary):hover {
 body.dark .info-box {
   background-color: #212121;
   box-shadow: none;
+}
+body.dark .menu-toggle {
+  color: #f3f4f6;
 }
 
 /* Botão de tema */
