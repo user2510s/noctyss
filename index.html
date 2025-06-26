@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="shortcut icon" href="./src/images/icon.jpg" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
 </head>
 
 <body>
@@ -104,7 +106,22 @@
     function closePopup() {
       document.getElementById('comingSoonPopup').style.display = 'none';
     }
+     window.addEventListener('load', () => {
+    confetti({
+      particleCount: 150,
+      spread: 80,
+      origin: { y: 0.6 }
+    });
 
+    // Repetir leve nos primeiros 2 segundos
+    setTimeout(() => {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    }, 1000);
+  });
     document.getElementById("menuToggle").addEventListener("click", () => {
       document.getElementById("navLinks").classList.toggle("active");
     });
