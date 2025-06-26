@@ -36,7 +36,11 @@
     <div class="announcement">
       💖 Apoie o Noctyss! <a href="https://discord.gg/SvC2hRzs">Clique aqui para contribuir &rarr;</a>
     </div>
-    <h1>Noctyss - Minecraft & Discord</h1>
+    <div class="title-with-img">
+      <img src="./src/images/icon.jpg" alt="Ícone" class="title-icon" />
+      <h1>Noctyss - Minecraft & Discord</h1>
+    </div>
+
     <p>🎮 Entre em um mundo onde Minecraft se encontra com uma comunidade ativa no Discord! Construa, jogue, converse e
       se divirta com novos amigos.</p>
     <img src="./src/images/mine.png" alt="noctyss print" class="hero-image">
@@ -80,6 +84,12 @@
   </div>
   <script>
     const toggleBtn = document.getElementById("toggleTheme");
+
+    // Define o tema inicial como "dark" se não existir no localStorage
+    if (!localStorage.getItem("theme")) {
+      localStorage.setItem("theme", "dark");
+    }
+
     if (localStorage.getItem("theme") === "dark") {
       document.body.classList.add("dark");
       toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
@@ -96,6 +106,7 @@
         ? '<i class="fas fa-sun"></i>'
         : '<i class="fas fa-moon"></i>';
     });
+
     // Links que ainda não têm destino
     document.querySelectorAll('a[href="#"]').forEach(link => {
       link.addEventListener('click', function (e) {
@@ -107,22 +118,22 @@
     function closePopup() {
       document.getElementById('comingSoonPopup').style.display = 'none';
     }
-     window.addEventListener('load', () => {
-    confetti({
-      particleCount: 150,
-      spread: 80,
-      origin: { y: 0.6 }
-    });
-
-    // Repetir leve nos primeiros 2 segundos
-    setTimeout(() => {
+    window.addEventListener('load', () => {
       confetti({
-        particleCount: 100,
-        spread: 70,
+        particleCount: 150,
+        spread: 80,
         origin: { y: 0.6 }
       });
-    }, 1000);
-  });
+
+      // Repetir leve nos primeiros 2 segundos
+      setTimeout(() => {
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
+      }, 1000);
+    });
     document.getElementById("menuToggle").addEventListener("click", () => {
       document.getElementById("navLinks").classList.toggle("active");
     });
