@@ -6,7 +6,14 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+::-webkit-scrollbar{
+  background-color: transparent;
+  width: 5px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #282828;
+  border-radius: 1px;
+}
 body {
   font-family: "Roboto Mono", monospace;
   background-color: #ffffff;
@@ -311,7 +318,9 @@ body.dark {
 body.dark .title-icon {
   filter: invert(0%);
 }
-
+body.dark::-webkit-scrollbar-thumb{
+  background-color: #ffffff;
+}
 body.dark .info-box {
   background-color: #1c1c1c;
   color: #f3f4f6;
